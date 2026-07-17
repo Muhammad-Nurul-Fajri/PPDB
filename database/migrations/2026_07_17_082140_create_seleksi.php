@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('pendaftaran_id')->constrained('pendaftaran')->cascadeOnDelete();
             $table->foreignId('admin_id')->constrained('admin_ppdb')->cascadeOnDelete();
-            $table->enum('status', ['menunggu', 'lulus', 'tidak_lulus'])->default('');
+            $table->enum('status', ['menunggu', 'lulus', 'tidak_lulus'])->default('menunggu');
             $table->double('nilai')->nullable();
             $table->text('keterangan')->nullable();
             $table->dateTime('tanggal_seleksi')->nullable();

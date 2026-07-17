@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('nama_gelombang');
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
-            $table->int('kuota');
+            $table->integer('kuota');
             $table->enum('status', ['active', 'inactive'])->default('inactive');
             $table->timestamps();
         });

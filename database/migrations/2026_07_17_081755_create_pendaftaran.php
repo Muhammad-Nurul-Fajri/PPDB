@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->foreignId('gelombang_id')->constrained('gelombang')->cascadeOnDelete();
             $table->string('no_pendaftaran')->nullable();
             $table->date('tanggal_daftar')->nullable();
-            $table->enum('status', ['draf', 'menunggu', 'verifikasi', 'perlu_perbaikan', 'berkas_lengkap', 'lulus', 'tidak_lulus'])->default('');
+            $table->enum('status', ['draf', 'menunggu', 'verifikasi', 'perlu_perbaikan', 'berkas_lengkap', 'lulus', 'tidak_lulus'])->default('draf');
             $table->timestamps();
         });
     }
