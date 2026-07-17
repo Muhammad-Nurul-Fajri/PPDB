@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,6 +12,12 @@ return new class extends Migration
     {
         Schema::create('seleksi', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pendaftaran_id')->constrained('pendaftaran')->cascadeOnDelete();
+            $table->foreignId('admin_id')->constrained('admin_ppdb')->cascadeOnDelete();
+            $table->enum('status', ['menunggu', 'lulus', 'tidak_lulus'])->default('');
+            $table->double('nilai')->nullable();
+            $table->text('keterangan')->nullable();
+            $table->dateTime('tanggal_seleksi')->nullable();
             $table->timestamps();
         });
     }
