@@ -26,7 +26,6 @@ return new class extends Migration {
             $table->string('kota_kabupaten');
             $table->string('kecamatan');
             $table->string('desa');
-            $table->string('no_hp');
             $table->string('kode_pos');
             $table->timestamps();
         });

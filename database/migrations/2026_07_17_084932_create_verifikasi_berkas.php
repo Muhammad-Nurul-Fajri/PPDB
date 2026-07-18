@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('berkas_id')->constrained('berkas')->cascadeOnDelete();
             $table->foreignId('admin_id')->constrained('users')->cascadeOnDelete();
-            $table->enum('status', ['diterima', 'ditolak', 'perlu_perbaikan'])->default('menunggu');
+            $table->enum('status', ['menunggu', 'diterima', 'ditolak', 'perlu_perbaikan'])->default('menunggu');
             $table->text('catatan')->nullable();
             $table->dateTime('tanggal_verifikasi')->nullable();
             $table->timestamps();
