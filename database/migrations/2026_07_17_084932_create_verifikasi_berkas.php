@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('verifikasi_berkas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('berkas_id')->constrained('berkas')->cascadeOnDelete();
-            $table->foreignId('admin_id')->constrained('admin_ppdb')->cascadeOnDelete();
+            $table->foreignId('admin_id')->constrained('users')->cascadeOnDelete();
             $table->enum('status', ['diterima', 'ditolak', 'perlu_perbaikan'])->default('menunggu');
             $table->text('catatan')->nullable();
             $table->dateTime('tanggal_verifikasi')->nullable();

@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('seleksi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pendaftaran_id')->constrained('pendaftaran')->cascadeOnDelete();
-            $table->foreignId('admin_id')->constrained('admin_ppdb')->cascadeOnDelete();
+            $table->foreignId('admin_id')->constrained('users')->cascadeOnDelete();
             $table->enum('status', ['menunggu', 'lulus', 'tidak_lulus'])->default('menunggu');
             $table->double('nilai')->nullable();
             $table->text('keterangan')->nullable();
