@@ -11,6 +11,11 @@ Route::get('/dashboard', function () {
     return view('siswa.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/biodata', function () {
+    return view('siswa.biodata');
+})->middleware(['auth', 'verified'])->name('biodata');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

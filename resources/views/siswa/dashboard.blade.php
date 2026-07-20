@@ -119,9 +119,9 @@
             SIPENSA
         </div>
 
-        <a href="#"><i class="bi bi-house"></i> Dashboard</a>
+        <a href="{{ route('dashboard') }}"><i class="bi bi-house"></i> Dashboard</a>
 
-        <a href="#"><i class="bi bi-person"></i> Biodata</a>
+        <a href="{{ route('biodata') }}"><i class="bi bi-person"></i> Biodata</a>
 
         <a href="#"><i class="bi bi-people"></i> Data Orang Tua</a>
 
