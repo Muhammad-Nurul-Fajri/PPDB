@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gelombang;
+use App\Models\Pendaftaran;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -40,12 +42,26 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'siswa',
         ]);
+
+        // Auto-create pendaftaran linked to active gelombang
+        $gelombangAktif = Gelombang::active()
+            ->whereHas('tahunAjaran', fn($q) => $q->active())
+            ->first();
+
+        if ($gelombangAktif) {
+            Pendaftaran::create([
+                'user_id' => $user->id,
+                'gelombang_id' => $gelombangAktif->id,
+                'status' => 'draf',
+            ]);
+        }
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('siswa.dashboard', absolute: false));
     }
 }
