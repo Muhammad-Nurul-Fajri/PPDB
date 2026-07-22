@@ -198,6 +198,7 @@ class SiswaDashboardController extends Controller
         ]);
 
         // Delete old file if exists
+        /** @var \App\Models\Berkas $existingBerkas */
         $existingBerkas = $pendaftaran->berkas()
             ->where('jenis_berkas', $request->jenis_berkas)
             ->first();
