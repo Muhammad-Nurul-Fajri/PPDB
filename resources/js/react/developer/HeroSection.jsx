@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Download, FolderGit2, Mail, Linkedin, Github, Instagram, 
-  Sparkles, Code2, MapPin, CheckCircle2, ArrowUpRight, Terminal
+  Download, FolderGit2, Mail, Sparkles, Code2, MapPin, CheckCircle2, ArrowUpRight, Terminal
 } from 'lucide-react';
+import { Linkedin, Github, Instagram } from './SocialIcons';
 
 const roles = [
   'Full Stack Web Developer',
