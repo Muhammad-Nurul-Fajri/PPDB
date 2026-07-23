@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, 
-  Github, 
   Eye, 
   Sparkles, 
   Layers, 
@@ -13,6 +10,8 @@ import {
   Server,
   Database
 } from 'lucide-react';
+import { GithubIcon } from './SocialIcons';
+
 
 const projects = [
   {

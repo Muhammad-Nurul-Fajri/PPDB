@@ -141,7 +141,7 @@ export default function HeroSection({ onOpenContact, onOpenCv }) {
                 className="p-2.5 rounded-xl bg-slate-100 hover:bg-blue-50 dark:bg-slate-800/70 dark:hover:bg-slate-800 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700/80 transition-all shadow-xs"
                 title="LinkedIn Profile"
               >
-                <Linkedin className="w-4 h-4" />
+                <LinkedinIcon className="w-4 h-4" />
               </a>
 
               <a
@@ -151,7 +151,7 @@ export default function HeroSection({ onOpenContact, onOpenCv }) {
                 className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/70 dark:hover:bg-slate-800 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white border border-slate-200 dark:border-slate-700/80 transition-all shadow-xs"
                 title="GitHub Profile"
               >
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
               </a>
 
               <a
@@ -161,8 +161,9 @@ export default function HeroSection({ onOpenContact, onOpenCv }) {
                 className="p-2.5 rounded-xl bg-slate-100 hover:bg-pink-50 dark:bg-slate-800/70 dark:hover:bg-slate-800 text-slate-600 hover:text-pink-600 dark:text-slate-300 dark:hover:text-pink-400 border border-slate-200 dark:border-slate-700/80 transition-all shadow-xs"
                 title="Instagram Profile"
               >
-                <Instagram className="w-4 h-4" />
+                <InstagramIcon className="w-4 h-4" />
               </a>
+
 
               <a
                 href="mailto:mnurulfajri2003@gmail.com"
