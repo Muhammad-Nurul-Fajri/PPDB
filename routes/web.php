@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 // Public Routes
 Route::get('/', [LandingController::class, 'index'])->name('home');
+Route::get('/developer', [LandingController::class, 'developer'])->name('developer');
 
 // Siswa Routes
 Route::middleware(['auth', 'verified', 'role:siswa'])->prefix('siswa')->name('siswa.')->group(function () {
