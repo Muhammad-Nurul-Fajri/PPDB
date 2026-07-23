@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, CheckCircle2 } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 export default function Organizations() {
   const orgs = [
@@ -11,7 +11,7 @@ export default function Organizations() {
     },
     {
       name: 'Student Executive Board (BEM)',
-      role: 'Public Relations & Student Affairs',
+      role: 'Public Relations & Student Affairs Staff',
       contributions: ['Public Communication', 'Leadership', 'Social Media Management', 'Content Creation']
     },
     {
@@ -22,13 +22,13 @@ export default function Organizations() {
   ];
 
   return (
-    <section id="organization" className="py-28 sm:py-32 relative overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="organization" className="py-[120px] relative overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Title (40px) */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">Leadership</span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+        {/* 40px Section Title */}
+        <div className="max-w-3xl mb-12">
+          <span className="text-[14px] font-semibold text-blue-600 uppercase tracking-widest block mb-2">Leadership</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-slate-900 dark:text-white">
             Organization <span className="text-blue-600">Experience</span>
           </h2>
         </div>
@@ -47,20 +47,20 @@ export default function Organizations() {
               <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-zinc-950 border-4 border-blue-600"></div>
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <Users className="w-4 h-4 text-blue-600" />
+                <h3 className="text-lg sm:text-[20px] font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Users className="w-5 h-5 text-blue-600" />
                   {item.name}
                 </h3>
-                <span className="text-xs font-semibold text-slate-500 dark:text-zinc-400">
+                <span className="text-[14px] font-semibold text-slate-500 dark:text-zinc-400">
                   {item.role}
                 </span>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 mt-2">
+              <div className="flex flex-wrap gap-2 mt-3">
                 {item.contributions.map((c, i) => (
                   <span
                     key={i}
-                    className="text-[11px] font-semibold px-2.5 py-0.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200/50 dark:border-blue-800/50"
+                    className="text-[14px] font-semibold px-3 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200/50 dark:border-blue-800/50"
                   >
                     {c}
                   </span>

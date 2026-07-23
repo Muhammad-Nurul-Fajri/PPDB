@@ -43,19 +43,19 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="py-28 sm:py-32 relative overflow-hidden bg-slate-50/50 dark:bg-zinc-900/30">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="achievements" className="py-[120px] relative overflow-hidden bg-slate-50/50 dark:bg-zinc-900/30">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Title (40px) */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">Honors</span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+        {/* 40px Section Title */}
+        <div className="max-w-3xl mb-12">
+          <span className="text-[14px] font-semibold text-blue-600 uppercase tracking-widest block mb-2">Recognition</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-slate-900 dark:text-white">
             Achievements &amp; <span className="text-blue-600">Awards</span>
           </h2>
         </div>
 
-        {/* Timeline Style Minimal Grid */}
-        <div className="relative border-l-2 border-slate-200 dark:border-zinc-800 ml-4 sm:ml-8 lg:ml-12 pl-6 sm:pl-10 space-y-10">
+        {/* Minimal Timeline */}
+        <div className="relative border-l-2 border-slate-200 dark:border-zinc-800 ml-4 sm:ml-8 lg:ml-12 pl-6 sm:pl-10 space-y-8">
           {achievements.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -67,15 +67,15 @@ export default function Achievements() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="relative"
               >
-                <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-zinc-950 border-4 border-blue-600"></div>
+                <div className="absolute -left-[31px] sm:-left-[47px] top-2 w-4 h-4 rounded-full bg-white dark:bg-zinc-950 border-4 border-blue-600"></div>
 
-                <div className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800/80 rounded-[24px] p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800/80 rounded-[20px] p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1">
+                    <span className="text-[14px] font-semibold text-blue-600 uppercase tracking-wider block mb-1">
                       {item.scope}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                      <Icon className="w-4 h-4 text-blue-600" />
+                    <h3 className="text-lg sm:text-[20px] font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                      <Icon className="w-5 h-5 text-blue-600" />
                       {item.category}
                     </h3>
                   </div>
@@ -84,7 +84,7 @@ export default function Achievements() {
                     {item.awards.map((award, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 rounded-xl bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-zinc-200 text-xs font-semibold border border-slate-200/60 dark:border-zinc-800/60"
+                        className="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-zinc-200 text-[14px] font-semibold border border-slate-200/60 dark:border-zinc-800/60"
                       >
                         🏆 {award}
                       </span>
