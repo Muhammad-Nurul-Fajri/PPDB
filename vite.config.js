@@ -17,10 +17,18 @@ export default defineConfig({
         chunkSizeWarningLimit: 1000,
         rollupOptions: {
             output: {
-                manualChunks: {
-                    'vendor-react': ['react', 'react-dom'],
-                    'vendor-framer': ['framer-motion'],
-                    'vendor-icons': ['lucide-react'],
+                manualChunks(id) {
+                    if (id.includes('node_modules')) {
+                        if (id.includes('framer-motion')) {
+                            return 'vendor-framer';
+                        }
+                        if (id.includes('lucide-react')) {
+                            return 'vendor-icons';
+                        }
+                        if (id.includes('chart.js') || id.includes('react-chartjs-2')) {
+                            return 'vendor-charts';
+                        }
+                    }
                 }
             }
         }
