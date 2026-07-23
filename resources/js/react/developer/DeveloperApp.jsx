@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import HeroSection from './HeroSection';
-import AboutSection from './AboutSection';
-import ExperienceSection from './ExperienceSection';
-import SkillsSection from './SkillsSection';
-import ProjectsSection from './ProjectsSection';
-import AchievementsSection from './AchievementsSection';
-import OrganizationSection from './OrganizationSection';
-import StatsSection from './StatsSection';
-import PhilosophySection from './PhilosophySection';
-import ContactCtaSection from './ContactCtaSection';
+import Hero from './Hero';
+import About from './About';
+import Experience from './Experience';
+import Skills from './Skills';
+import Projects from './Projects';
+import Achievements from './Achievements';
+import Organizations from './Organizations';
+import Stats from './Stats';
+import Philosophy from './Philosophy';
+import CTA from './CTA';
 import Footer from './Footer';
 import { ContactModal, CvModal } from './Modals';
 
@@ -37,9 +37,9 @@ export default function DeveloperApp() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-[#09090B] text-slate-900 dark:text-zinc-100 font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300">
       
-      {/* Sticky Header Navbar */}
+      {/* Vercel-style Floating Navigation */}
       <Navbar 
         darkMode={darkMode} 
         setDarkMode={setDarkMode}
@@ -47,40 +47,39 @@ export default function DeveloperApp() {
         onOpenCv={() => setIsCvOpen(true)}
       />
 
-      {/* Main Page Sections */}
       <main>
-        {/* Section 1: Hero */}
-        <HeroSection 
+        {/* 1. Hero Section (90vh height) */}
+        <Hero 
           onOpenContact={() => setIsContactOpen(true)}
           onOpenCv={() => setIsCvOpen(true)}
         />
 
-        {/* Section 2: About Me */}
-        <AboutSection />
+        {/* 2. About Me */}
+        <About />
 
-        {/* Section 3: Professional Experience */}
-        <ExperienceSection />
+        {/* 3. Professional Experience */}
+        <Experience />
 
-        {/* Section 4: Technical Skills */}
-        <SkillsSection />
+        {/* 4. Technical Skills (Badges, NO progress bars) */}
+        <Skills />
 
-        {/* Section 5: Featured Projects */}
-        <ProjectsSection />
+        {/* 5. Featured Projects (6 Projects, 3 Columns, 16:9 ratio) */}
+        <Projects />
 
-        {/* Section 6: Achievements */}
-        <AchievementsSection />
+        {/* 6. Achievements (Timeline style, minimal icons) */}
+        <Achievements />
 
-        {/* Section 7: Organization Experience */}
-        <OrganizationSection />
+        {/* 7. Organizations (Simple timeline, no large cards) */}
+        <Organizations />
 
-        {/* Section 8: Statistics */}
-        <StatsSection />
+        {/* 8. Statistics (Animated numbers) */}
+        <Stats />
 
-        {/* Section 9: Development Philosophy */}
-        <PhilosophySection />
+        {/* 9. Developer Philosophy (Centered 40px quote) */}
+        <Philosophy />
 
-        {/* Section 10: Let's Work Together */}
-        <ContactCtaSection 
+        {/* 10. Contact CTA (24px rounded container) */}
+        <CTA 
           onOpenContact={() => setIsContactOpen(true)}
           onOpenCv={() => setIsCvOpen(true)}
         />
@@ -89,7 +88,7 @@ export default function DeveloperApp() {
       {/* Footer */}
       <Footer />
 
-      {/* Modals */}
+      {/* Interactive Modals */}
       <ContactModal 
         isOpen={isContactOpen} 
         onClose={() => setIsContactOpen(false)} 
