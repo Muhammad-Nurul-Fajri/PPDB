@@ -34,10 +34,6 @@
                     <a href="#informasi" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Informasi</a>
                     <a href="#alur" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Alur Pendaftaran</a>
                     <a href="#kontak" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Kontak</a>
-                    <a href="{{ route('developer') }}" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors flex items-center gap-1.5 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                        <i class="bi bi-code-slash"></i>
-                        <span>Developer</span>
-                    </a>
                     
                     <div class="flex items-center space-x-4 pl-4 border-l border-gray-200">
                         @auth

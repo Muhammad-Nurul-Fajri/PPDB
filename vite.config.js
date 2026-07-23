@@ -7,30 +7,11 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css', 
-                'resources/js/app.js'
+                'resources/js/app.js',
+                'resources/js/react/app.jsx'
             ],
             refresh: true,
         }),
         react(),
     ],
-    build: {
-        chunkSizeWarningLimit: 1000,
-        rollupOptions: {
-            output: {
-                manualChunks(id) {
-                    if (id.includes('node_modules')) {
-                        if (id.includes('framer-motion')) {
-                            return 'vendor-framer';
-                        }
-                        if (id.includes('lucide-react')) {
-                            return 'vendor-icons';
-                        }
-                        if (id.includes('chart.js') || id.includes('react-chartjs-2')) {
-                            return 'vendor-charts';
-                        }
-                    }
-                }
-            }
-        }
-    }
 });
