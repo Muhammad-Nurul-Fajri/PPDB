@@ -14,4 +14,13 @@ class LandingController extends Controller
     {
         return view('welcome');
     }
+
+    /**
+     * Display the developer portfolio page.
+     */
+    public function developer(): View
+    {
+        return view('developer');
+    }
 }
+
