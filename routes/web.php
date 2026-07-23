@@ -50,12 +50,12 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
     Route::get('/seleksi', [AdminDashboardController::class, 'seleksi'])->name('seleksi.index');
     Route::post('/seleksi/{pendaftaran}', [AdminDashboardController::class, 'updateSeleksi'])->name('seleksi.update');
     
-    Route::get('/tahun-ajaran', [AdminDashboardController::class, 'tahunAjaran'])->name('tahun-ajaran.index');
+    Route::get('/periode', [AdminDashboardController::class, 'periode'])->name('periode.index');
     Route::post('/tahun-ajaran', [AdminDashboardController::class, 'storeTahunAjaran'])->name('tahun-ajaran.store');
     Route::put('/tahun-ajaran/{tahunAjaran}', [AdminDashboardController::class, 'updateTahunAjaran'])->name('tahun-ajaran.update');
     Route::delete('/tahun-ajaran/{tahunAjaran}', [AdminDashboardController::class, 'deleteTahunAjaran'])->name('tahun-ajaran.delete');
     
-    Route::get('/gelombang', [AdminDashboardController::class, 'gelombang'])->name('gelombang.index');
+    // Route::get('/gelombang', [AdminDashboardController::class, 'gelombang'])->name('gelombang.index'); // combined to periode
     Route::post('/gelombang', [AdminDashboardController::class, 'storeGelombang'])->name('gelombang.store');
     Route::put('/gelombang/{gelombang}', [AdminDashboardController::class, 'updateGelombang'])->name('gelombang.update');
     Route::delete('/gelombang/{gelombang}', [AdminDashboardController::class, 'deleteGelombang'])->name('gelombang.delete');

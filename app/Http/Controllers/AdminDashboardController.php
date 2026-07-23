@@ -215,13 +215,15 @@ class AdminDashboardController extends Controller
     }
 
     /**
-     * Show tahun ajaran management.
+     * Show periode (tahun ajaran & gelombang) management.
      */
-    public function tahunAjaran(): View
+    public function periode(): View
     {
         $tahunAjaran = TahunAjaran::withCount('gelombang')->latest()->get();
+        $gelombang = Gelombang::with('tahunAjaran')->withCount('pendaftaran')->latest()->get();
+        $tahunAjaranList = TahunAjaran::latest()->get();
 
-        return view('admin.tahun-ajaran.index', compact('tahunAjaran'));
+        return view('admin.periode.index', compact('tahunAjaran', 'gelombang', 'tahunAjaranList'));
     }
 
     /**
@@ -279,16 +281,7 @@ class AdminDashboardController extends Controller
         return back()->with('success', 'Tahun ajaran berhasil dihapus.');
     }
 
-    /**
-     * Show gelombang management.
-     */
-    public function gelombang(): View
-    {
-        $gelombang = Gelombang::with('tahunAjaran')->withCount('pendaftaran')->latest()->get();
-        $tahunAjaranList = TahunAjaran::latest()->get();
-
-        return view('admin.gelombang.index', compact('gelombang', 'tahunAjaranList'));
-    }
+    
 
     /**
      * Store gelombang.

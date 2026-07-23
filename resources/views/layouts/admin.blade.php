@@ -61,12 +61,8 @@
                     </p>
                 </div>
 
-                <x-sidebar-link href="{{ route('admin.tahun-ajaran.index') }}" :active="request()->routeIs('admin.tahun-ajaran.*')" icon="bi-calendar3" variant="dark">
-                    Tahun Ajaran
-                </x-sidebar-link>
-
-                <x-sidebar-link href="{{ route('admin.gelombang.index') }}" :active="request()->routeIs('admin.gelombang.*')" icon="bi-layers" variant="dark">
-                    Gelombang
+                <x-sidebar-link href="{{ route('admin.periode.index') }}" :active="request()->routeIs('admin.periode.*')" icon="bi-calendar-range" variant="dark">
+                    Tahun Ajaran & Gelombang
                 </x-sidebar-link>
 
                 <div class="pt-4 pb-2">
