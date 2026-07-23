@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   Code2, 
   MapPin, 
@@ -6,7 +7,6 @@ import {
   Heart 
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './SocialIcons';
-
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -80,7 +80,7 @@ export default function Footer() {
                 className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white transition-colors border border-slate-800"
                 title="GitHub"
               >
-                <Github className="w-5 h-5" />
+                <GithubIcon className="w-5 h-5" />
               </a>
 
               <a
@@ -90,7 +90,7 @@ export default function Footer() {
                 className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-slate-800 flex items-center justify-center text-slate-300 hover:text-blue-400 transition-colors border border-slate-800"
                 title="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <LinkedinIcon className="w-5 h-5" />
               </a>
 
               <a
@@ -100,7 +100,7 @@ export default function Footer() {
                 className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-slate-800 flex items-center justify-center text-slate-300 hover:text-pink-400 transition-colors border border-slate-800"
                 title="Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <InstagramIcon className="w-5 h-5" />
               </a>
             </div>
 
@@ -110,6 +110,7 @@ export default function Footer() {
           </div>
 
         </div>
+
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
