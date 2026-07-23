@@ -330,5 +330,6 @@
             }
         });
     </script>
+    <x-watermark />
 </body>
 </html>

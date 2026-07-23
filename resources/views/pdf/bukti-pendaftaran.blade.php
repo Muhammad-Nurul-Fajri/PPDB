@@ -63,9 +63,39 @@
         .ttd-box {
             height: 80px;
         }
+        .pdf-watermark {
+            position: fixed;
+            top: 45%;
+            left: -10%;
+            width: 120%;
+            text-align: center;
+            transform: rotate(-30deg);
+            transform-origin: 50% 50%;
+            opacity: 0.12;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            z-index: -1000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .pdf-watermark-footer {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            font-size: 8px;
+            color: #777777;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
+    <div class="pdf-watermark">
+        Muhammad Nurul Fajri | Owltility | Star Fence Developer
+    </div>
+    <div class="pdf-watermark-footer">
+        Muhammad Nurul Fajri | Owltility | Star Fence Developer
+    </div>
 
     <div class="header">
         <h1>PANITIA PENERIMAAN SISWA BARU</h1>

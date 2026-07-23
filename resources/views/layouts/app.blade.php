@@ -32,5 +32,6 @@
                 {{ $slot }}
             </main>
         </div>
+        <x-watermark />
     </body>
 </html>

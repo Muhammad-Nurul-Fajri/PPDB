@@ -159,5 +159,6 @@
     </div>
 
     @stack('scripts')
+    <x-watermark />
 </body>
 </html>
