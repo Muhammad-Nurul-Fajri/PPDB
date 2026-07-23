@@ -118,7 +118,7 @@
                         </div>
                         <div>
                             <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Pendaftar Aktif</p>
-                            <p class="text-2xl font-bold text-gray-900">1,250+</p>
+                            <p class="text-2xl font-bold text-gray-900">150</p>
                         </div>
                     </div>
                 </div>
