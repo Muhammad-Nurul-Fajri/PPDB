@@ -9,10 +9,16 @@ export default function Navbar({ darkMode, setDarkMode, onOpenContact, onOpenCv 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // Calculate scroll progress percentage
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
 
       const sections = ['hero', 'about', 'experience', 'skills', 'projects', 'achievements', 'organization', 'contact'];
       const scrollPosition = window.scrollY + 200;
@@ -45,11 +51,20 @@ export default function Navbar({ darkMode, setDarkMode, onOpenContact, onOpenCv 
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-3 transition-all duration-300">
+      
+      {/* Scroll Progress Top Bar */}
+      <div className="fixed top-0 left-0 right-0 h-1 bg-slate-200/20 z-50">
+        <div 
+          className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       <div 
         className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${
           scrolled 
-            ? 'px-4 sm:px-6 py-2.5 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 shadow-xl shadow-slate-900/10' 
-            : 'px-2 py-2 bg-white/40 dark:bg-slate-950/40 backdrop-blur-md border border-slate-200/40 dark:border-slate-800/40'
+            ? 'px-4 sm:px-6 py-2.5 bg-white/85 dark:bg-slate-950/85 backdrop-blur-2xl border border-slate-200/80 dark:border-slate-800/80 shadow-xl shadow-slate-900/10' 
+            : 'px-3 py-2.5 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50'
         }`}
       >
         <div className="flex items-center justify-between">
@@ -116,7 +131,6 @@ export default function Navbar({ darkMode, setDarkMode, onOpenContact, onOpenCv 
 
           {/* Right Action Controls */}
           <div className="hidden sm:flex items-center gap-2.5">
-            {/* Theme Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 shadow-sm hover:scale-105"
@@ -126,7 +140,6 @@ export default function Navbar({ darkMode, setDarkMode, onOpenContact, onOpenCv 
               {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
             </button>
 
-            {/* Download CV */}
             <button
               onClick={onOpenCv}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-500/25 transition-all duration-200 hover:-translate-y-0.5"
@@ -135,7 +148,6 @@ export default function Navbar({ darkMode, setDarkMode, onOpenContact, onOpenCv 
               <span>CV</span>
             </button>
 
-            {/* Contact Button */}
             <button
               onClick={onOpenContact}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 shadow-sm transition-all duration-200 hover:-translate-y-0.5"

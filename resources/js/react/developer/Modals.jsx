@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Mail, Phone, MapPin, Download, CheckCircle2, Sparkles, Copy, Check, MessageCircle, ExternalLink } from 'lucide-react';
+import { X, Send, Mail, Phone, MapPin, Download, CheckCircle2, Sparkles } from 'lucide-react';
 import { Linkedin, Github, Instagram } from './SocialIcons';
 
 export function ContactModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-
-  const emailAddress = 'mnfajri.official@gmail.com';
-  const whatsappNumber = '6281234567890';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,17 +16,7 @@ export function ContactModal({ isOpen, onClose }) {
     }, 2500);
   };
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(emailAddress);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   if (!isOpen) return null;
-
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    `Hello Muhammad Nurul Fajri, I am interested in collaborating on a web project.`
-  )}`;
 
   return (
     <AnimatePresence>
@@ -65,58 +51,31 @@ export function ContactModal({ isOpen, onClose }) {
               <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4 border border-emerald-500/20">
                 <CheckCircle2 className="w-8 h-8 animate-bounce" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Message Sent Successfully!</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 max-w-xs">
-                Thank you for reaching out. Muhammad Nurul Fajri will reply to your email shortly.
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Message Sent!</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                Thank you for reaching out, Muhammad Nurul Fajri will get back to you shortly.
               </p>
             </div>
           ) : (
             <div>
               <div className="flex items-center gap-2 mb-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-amber-400" />
-                <span>Let's Build Together</span>
+                <Mail className="w-4 h-4" />
+                <span>Get In Touch</span>
               </div>
-              <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-6">
-                Contact <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Muhammad Nurul Fajri</span>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                Contact <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Fajri</span>
               </h3>
 
-              {/* Quick Connect Actions */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-xs font-bold transition-all"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp Direct</span>
-                </a>
-
-                <button
-                  onClick={handleCopyEmail}
-                  className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 border border-indigo-500/30 text-xs font-bold transition-all"
-                >
-                  {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
-                  <span>{copied ? 'Email Copied!' : 'Copy Email'}</span>
-                </button>
-              </div>
-
-              <div className="relative flex py-2 items-center mb-4">
-                <div className="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
-                <span className="flex-shrink mx-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Or Send Message</span>
-                <div className="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-3.5">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Your Full Name</label>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Your Name</label>
                   <input
                     type="text"
                     required
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 font-medium"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
 
@@ -128,7 +87,7 @@ export function ContactModal({ isOpen, onClose }) {
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 font-medium"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
 
@@ -137,34 +96,43 @@ export function ContactModal({ isOpen, onClose }) {
                   <input
                     type="text"
                     required
-                    placeholder="Project Inquiry / Enterprise Offer"
+                    placeholder="Project Inquiry / Job Opportunity"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 font-medium"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Message</label>
                   <textarea
-                    rows={3}
+                    rows={4}
                     required
-                    placeholder="Tell me about your project requirements..."
+                    placeholder="Tell me about your project or offer..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none font-medium"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/25 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-md shadow-indigo-500/25 transition-all flex items-center justify-center gap-2"
                 >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>Send Direct Message</span>
+                  <Send className="w-4 h-4" />
+                  <span>Send Message</span>
                 </button>
               </form>
 
+              {/* Direct Quick Links */}
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-900 flex items-center justify-around text-xs text-slate-500">
+                <a href="mailto:mnfajri.official@gmail.com" className="hover:text-indigo-600 flex items-center gap-1">
+                  <Mail className="w-3.5 h-3.5" /> Email Direct
+                </a>
+                <a href="https://linkedin.com/in/muhammad-nurul-fajri" target="_blank" rel="noreferrer" className="hover:text-blue-500 flex items-center gap-1">
+                  <Linkedin className="w-3.5 h-3.5" /> LinkedIn
+                </a>
+              </div>
             </div>
           )}
         </motion.div>
@@ -200,44 +168,37 @@ export function CvModal({ isOpen, onClose }) {
             <X className="w-5 h-5" />
           </button>
 
-          <div className="flex items-center gap-3.5 mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 text-white flex items-center justify-center font-extrabold text-xl shadow-lg">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
               CV
             </div>
             <div>
-              <h3 className="text-xl font-extrabold text-slate-900 dark:text-white">Curriculum Vitae</h3>
-              <p className="text-xs text-indigo-600 dark:text-indigo-400 font-bold">Muhammad Nurul Fajri — Software Engineer</p>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">Curriculum Vitae</h3>
+              <p className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold">Muhammad Nurul Fajri - Software Engineer</p>
             </div>
           </div>
 
-          <div className="space-y-4 max-h-[55vh] overflow-y-auto pr-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+          <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
             <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <h4 className="font-bold text-slate-900 dark:text-white mb-1">Executive Profile</h4>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <h4 className="font-bold text-slate-900 dark:text-white mb-1">Executive Summary</h4>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                 Full Stack Web Developer &amp; Software Engineer with extensive experience in React.js, Laravel, PHP, MySQL, and modern UI/UX design. Founder of Star Fence Developer.
               </p>
             </div>
 
             <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <h4 className="font-bold text-slate-900 dark:text-white mb-2">Technical Summary</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                <div>• <strong>Frontend:</strong> React.js, Tailwind CSS, JavaScript ES6+, Vite</div>
-                <div>• <strong>Backend:</strong> Laravel, PHP, RESTful APIs, Node.js</div>
-                <div>• <strong>Databases:</strong> MySQL, PostgreSQL, PgAdmin</div>
-                <div>• <strong>Design &amp; Media:</strong> Photoshop, Canva, CorelDraw, UI/UX</div>
+              <h4 className="font-bold text-slate-900 dark:text-white mb-2">Key Competencies</h4>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div>• Web &amp; Frontend: React.js, Tailwind, JavaScript</div>
+                <div>• Backend &amp; DB: Laravel, PHP, REST API, MySQL</div>
+                <div>• Design &amp; UI: Photoshop, Canva, UI/UX Wireframing</div>
+                <div>• DevOps &amp; Tools: Git, GitHub, Postman, VS Code</div>
               </div>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <h4 className="font-bold text-slate-900 dark:text-white mb-1">Academic Background</h4>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
-                Bachelor of Information Systems, UIN Imam Bonjol Padang (2022 – 2026).
-              </p>
             </div>
           </div>
 
           <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-900 flex items-center justify-between gap-4">
-            <span className="text-xs text-slate-500 font-medium">Official Curriculum Vitae</span>
+            <span className="text-xs text-slate-500">PDF Format (Official CV)</span>
             <a
               href="/images/fajri.jpg" 
               download="CV_Muhammad_Nurul_Fajri.jpg"
