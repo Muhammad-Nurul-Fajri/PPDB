@@ -1,5 +1,8 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, 
+
   Eye, 
   Sparkles, 
   Layers, 
@@ -213,9 +216,10 @@ export default function ProjectsSection() {
                     rel="noreferrer"
                     className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors"
                   >
-                    <Github className="w-4 h-4" />
+                    <GithubIcon className="w-4 h-4" />
                     <span>GitHub Code</span>
                   </a>
+
 
                   <button
                     onClick={() => setSelectedProject(project)}
