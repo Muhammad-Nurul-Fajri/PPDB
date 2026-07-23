@@ -7,11 +7,22 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css', 
-                'resources/js/app.js',
-                'resources/js/react/app.jsx'
+                'resources/js/app.js'
             ],
             refresh: true,
         }),
         react(),
     ],
+    build: {
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'vendor-react': ['react', 'react-dom'],
+                    'vendor-framer': ['framer-motion'],
+                    'vendor-icons': ['lucide-react'],
+                }
+            }
+        }
+    }
 });
