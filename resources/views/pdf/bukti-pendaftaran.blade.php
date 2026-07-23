@@ -90,9 +90,7 @@
     </style>
 </head>
 <body>
-    <div class="pdf-watermark">
-        Muhammad Nurul Fajri | Owltility | Star Fence Developer
-    </div>
+    
     <div class="pdf-watermark-footer">
         Muhammad Nurul Fajri | Owltility | Star Fence Developer
     </div>
