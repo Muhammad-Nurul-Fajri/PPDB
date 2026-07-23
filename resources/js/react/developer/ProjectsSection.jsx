@@ -304,9 +304,10 @@ export default function ProjectsSection() {
                     rel="noreferrer"
                     className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200"
                   >
-                    <Github className="w-4 h-4" />
+                    <GithubIcon className="w-4 h-4" />
                     <span>View Repository</span>
                   </a>
+
 
                   <a
                     href={selectedProject.demoUrl}

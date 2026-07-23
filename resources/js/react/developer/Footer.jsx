@@ -1,14 +1,12 @@
-import React from 'react';
 import { 
   Code2, 
   MapPin, 
   Mail, 
-  Github, 
-  Linkedin, 
-  Instagram, 
   ArrowUp, 
   Heart 
 } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './SocialIcons';
+
 
 export default function Footer() {
   const scrollToTop = () => {
