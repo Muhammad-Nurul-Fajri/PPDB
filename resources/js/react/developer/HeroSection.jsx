@@ -4,9 +4,6 @@ import {
   Download, 
   FolderGit2, 
   Mail, 
-  Linkedin, 
-  Github, 
-  Instagram, 
   Sparkles, 
   CheckCircle2, 
   Code, 
@@ -15,6 +12,8 @@ import {
   Terminal,
   ArrowRight
 } from 'lucide-react';
+import { LinkedinIcon, GithubIcon, InstagramIcon } from './SocialIcons';
+
 
 const roles = [
   'Full Stack Web Developer',
