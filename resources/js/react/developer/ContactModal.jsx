@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { X, Mail, Send, Sparkles, User, MessageSquare, Phone, MapPin, Linkedin, Github, Instagram } from 'lucide-react';
+import { X, Mail, Send, Sparkles, User, MessageSquare, Phone, MapPin } from 'lucide-react';
+import { LinkedinIcon, GithubIcon, InstagramIcon } from './SocialIcons';
 
 export default function ContactModal({ isOpen, onClose, onToast }) {
   if (!isOpen) return null;
@@ -108,9 +109,9 @@ export default function ContactModal({ isOpen, onClose, onToast }) {
           <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800">
             <span>Direct Email: mnurulfajri2003@gmail.com</span>
             <div className="flex gap-2 text-slate-600 dark:text-slate-300">
-              <a href="https://linkedin.com/in/muhammad-nurul-fajri" target="_blank" rel="noreferrer"><Linkedin className="w-3.5 h-3.5 hover:text-sky-500" /></a>
-              <a href="https://github.com/Muhammad-Nurul-Fajri" target="_blank" rel="noreferrer"><Github className="w-3.5 h-3.5 hover:text-sky-500" /></a>
-              <a href="https://instagram.com/fajri_mnf" target="_blank" rel="noreferrer"><Instagram className="w-3.5 h-3.5 hover:text-pink-500" /></a>
+              <a href="https://linkedin.com/in/muhammad-nurul-fajri" target="_blank" rel="noreferrer"><LinkedinIcon className="w-3.5 h-3.5 hover:text-sky-500" /></a>
+              <a href="https://github.com/Muhammad-Nurul-Fajri" target="_blank" rel="noreferrer"><GithubIcon className="w-3.5 h-3.5 hover:text-sky-500" /></a>
+              <a href="https://instagram.com/fajri_mnf" target="_blank" rel="noreferrer"><InstagramIcon className="w-3.5 h-3.5 hover:text-pink-500" /></a>
             </div>
           </div>
 
@@ -138,3 +139,4 @@ export default function ContactModal({ isOpen, onClose, onToast }) {
     </div>
   );
 }
+
