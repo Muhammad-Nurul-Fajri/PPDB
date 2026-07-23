@@ -36,8 +36,8 @@
     <!-- Structured Data (JSON-LD) for SEO -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Person",
+      "@@context": "https://schema.org",
+      "@@type": "Person",
       "name": "Muhammad Nurul Fajri",
       "url": "{{ url('/developer') }}",
       "image": "{{ asset('images/fajri.jpg') }}",
@@ -48,16 +48,17 @@
       ],
       "jobTitle": "Software Engineer & Full Stack Developer",
       "worksFor": {
-        "@type": "Organization",
+        "@@type": "Organization",
         "name": "Star Fence Developer"
       },
       "alumniOf": {
-        "@type": "CollegeOrUniversity",
+        "@@type": "CollegeOrUniversity",
         "name": "UIN Imam Bonjol Padang"
       },
       "knowsAbout": ["Full Stack Development", "React.js", "Laravel", "UI/UX Design", "MySQL", "JavaScript", "Tailwind CSS"]
     }
     </script>
+
 
     <!-- Scripts and CSS -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/react/app.jsx'])
